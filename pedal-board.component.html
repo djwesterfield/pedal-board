@@ -1,0 +1,24 @@
+<div>
+  <h1>Guitar Pedal Board Layout</h1>
+
+  <div class="input-section">
+    <h2>Add Pedals</h2>
+    <form (submit)="addPedal(pedalInput.value); pedalInput.value=''">
+      <label>
+        Pedal:
+        <input type="text" #pedalInput>
+      </label>
+      <button type="submit">Add</button>
+    </form>
+
+    <button (click)="clearPedals()">Clear Pedals</button>
+  </div>
+
+  <div class="layout-section">
+    <h2>Layout</h2>
+    <button (click)="generateLayout()">Generate Layout</button>
+    <ul>
+      <li *ngFor="let pedal of pedalBoardLayout">{{ pedal }}</li>
+    </ul>
+  </div>
+</div>
